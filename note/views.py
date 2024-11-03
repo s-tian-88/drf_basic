@@ -1,8 +1,12 @@
-from rest_framework import generics # набор базовых классов для представления
+from rest_framework.views import APIView # Базовый класс представления
+from rest_framework.response import Response
 
 from .models import Note
-from .serializers import NoteSerializer
 
-class NoteAPIView(generics.ListAPIView):
-    queryset = Note.objects.all()
-    serializer_class = NoteSerializer
+class NoteAPIView(APIView):
+    def get(self, request):
+        return Response({'title': 'get'})
+
+    def post(self, request):
+        return Response({'title': 'post'})
+
