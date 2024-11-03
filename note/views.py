@@ -6,3 +6,7 @@ from .serializers import NoteSerializer
 class NoteAPIView(generics.ListCreateAPIView):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
+
+class NoteUpdateAPIView(generics.UpdateAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
