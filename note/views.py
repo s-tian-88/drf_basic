@@ -3,6 +3,6 @@ from rest_framework import generics # набор базовых классов �
 from .models import Note
 from .serializers import NoteSerializer
 
-class NoteAPIView(generics.ListAPIView):
+class NoteAPIView(generics.ListCreateAPIView):
     queryset = Note.objects.all()
     serializer_class = NoteSerializer

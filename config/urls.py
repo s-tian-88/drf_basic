@@ -5,5 +5,5 @@ from note.views import NoteAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('notes/', NoteAPIView.as_view())
+    path('notes/', NoteAPIView.as_view()),
 ]
