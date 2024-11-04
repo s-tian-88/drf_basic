@@ -11,4 +11,5 @@ router.register(r'notes', NoteViewSet, basename='notes')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('session-auth/', include('rest_framework.urls')),
 ]
