@@ -1,10 +1,14 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
-from note.views import NoteAPIView, NoteUpdateAPIView
+from note.views import NoteViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'notes', NoteViewSet, basename='notes')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('notes/', NoteAPIView.as_view()),
-    path('notes/<int:pk>/', NoteUpdateAPIView.as_view())
+    path('', include(router.urls)),
 ]
