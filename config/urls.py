@@ -7,7 +7,6 @@ from note.views import NoteViewSet
 
 router = routers.DefaultRouter()
 router.register(r'notes', NoteViewSet, basename='notes')
-print(router.urls)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
